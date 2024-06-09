@@ -13,6 +13,11 @@ app.get('/mezan', (req, res) => {
         console.log('error--', error);
     }
 });
+app.use('/',(req, res) => {
+    return res.json({
+        msg:'meezan is running successfully'
+    })
+})
 
 app.listen(process.env.PORT||6000,() => {
     console.log('server was running successfully on port',process.env.PORT);
