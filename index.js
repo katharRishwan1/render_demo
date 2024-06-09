@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-require('dotenv');
+require('dotenv').config();
 
 app.get('/mezan', (req, res) => {
     try{
@@ -14,4 +14,6 @@ app.get('/mezan', (req, res) => {
     }
 });
 
-app.listen(process.env.PORT)
+app.listen(process.env.PORT||6000,() => {
+    console.log('server was running successfully on port',process.env.PORT);
+})
